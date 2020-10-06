@@ -7,15 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   //numeros : number[] = [];
-  numeros = new Array <number>(1000);
-  comptadors = new Array <number>(21) ;
+  // numeros = new Array <number>(20);
+  // comptadors = new Array <number>(10) ;
+
+  array1 : number[] = [];
+  array2 : number[] = [];
+
   constructor (){
     // inicialitzar les dades
       this.initData();
 
       this.initCounters();
 
-      this.computeHistograms();
+      // this.computeHistograms();
         
 
       }
@@ -23,9 +27,12 @@ export class AppComponent implements OnInit {
     initData() {
       //for (let index = 0; index < 1000; index++) {
       //this.numeros.push(Math.round(Math.random()*20));
-      for (let index = 0; index < this.numeros.length; index++) {
-        this.numeros[index] = Math.round(Math.random() * 20);
-    }
+      for (let index = 0; index < this.array1.length; index++) {
+        this.array1[index] = Math.round(Math.random() * 20);
+     }
+      for (let index = 0; index < this.array2.length; index++) {
+      this.array2[index] = Math.round(Math.random() * 20);
+      }
   }
 
     initCounters() {
@@ -35,24 +42,24 @@ export class AppComponent implements OnInit {
       }
     }
 
-    computeHistograms(){
-      for (let index = 0; index < this.numeros.length; index++) {
-        this.comptadors[this.numeros[index]] += 1;
-    }
-  }
+    // computeHistograms(){
+      // for (let index = 0; index < this.numeros.length; index++) {
+        // this.comptadors[this.numeros[index]] += 1;
+    // }
+  // }
 
-    trobar(){
-      var trobat : boolean;
-      var index = 0;
-      while (index < this.numeros.length && !trobat ) {
-        if (this.numeros[index] > this.numeros[index + 1]) {
-          trobat = true;
-        }
-        else{
-          index ++;
-        }
-      }
-    }
+    // trobar(){
+      // var trobat : boolean;
+      // var index = 0;
+      // while (index < this.numeros.length && !trobat ) {
+        // if (this.numeros[index] > this.numeros[index + 1]) {
+          // trobat = true;
+        // }
+        // else{
+          // index ++;
+        // }
+      // }
+    // }
 
     ngOnInit(){
     
