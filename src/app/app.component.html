@@ -1,11 +1,36 @@
-<div>
-  <div *ngif="a >= 0">
-      {{a}}
+<div *ngIf="flag; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>Al tercer vector hi ha algun</ng-template>
+  <ng-template #elseBlock>Al tercer vector no hi ha algun</ng-template>
+    <div class="fileContainer">
+      <button (click)="mostrarV1=true"> Mostrar taula 1: </button>
+    </div>
+    <div *ngIf="mostrarV1">
+    <table>
+      <tr>
+        <td *ngFor="let taula_1 of array1; let i=index">{{taula_1}}</td>
+      </tr>
+    </table>
+      <button (click)="mostrarV1=false"> Ocultar </button>
+    </div>
+  <div class="fileContainer">
+    <button (click)="mostrarV2=true"> Mostrar taula 2: </button>
   </div>
-  <p>Histograma</p>
-  <ul>
-    <li *ngFor="let comptador of comptadors; let i = index" >
-      <p>{{i}}: :{{comptador}}</p>
-    </li>
-  </ul>
-</div>
+  <div *ngIf="mostrarV2">
+    <table>
+      <tr>
+        <td *ngFor="let taula_2 of array2; let i=index">{{taula_2}}</td>
+      </tr>
+    </table>
+  <button (click)="mostrarV2=false"> Ocultar </button>
+ </div>
+ <div class="fileContainer">
+  <button (click)="mostrarV3=true"> Mostrar taula 3: </button>
+ </div>
+ <div *ngIf="mostrarV3">
+  <table>
+    <tr>
+      <td *ngFor="let taula_3 of array3; let i=index">{{taula_3}}</td>
+    </tr>
+  </table>
+    <button (click)="mostrarV3=false"> Ocultar </button>
+ </div>
